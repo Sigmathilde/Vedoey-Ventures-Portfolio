@@ -100,32 +100,34 @@
         </nav>
     </header>
     <div class="container">
-        <div class="bubble" onclick="showAnswer('What is the cost of hiring a web developer?')">What is the cost of hiring a web developer?</div>
-        <div class="bubble" onclick="showAnswer('What are Vedøy Venture\'s values?')">What are Vedøy Venture's values?</div>
-        <div class="bubble" onclick="showAnswer('How long can I expect the process to take?')">How long can the process take?</div>
-        <div class="bubble" onclick="showAnswer('How will a process proceed?')">How will the process proceed?</div>
-        <div class="bubble" onclick="showAnswer('Do you provide post-launch support?')">Do you provide post-launch support?</div>
-        <div class="bubble" onclick="showAnswer('Can you handle e-commerce projects?')">Can you handle e-commerce projects?</div>
-        <div class="bubble" onclick="showAnswer('What industries have you worked with?')">What industries have you worked with?</div>
-        <div class="bubble" onclick="showAnswer('What makes Vedøy Ventures unique?')">What makes Vedøy Ventures unique?</div>
-        <div class="bubble" onclick="showAnswer('Do you create mobile apps as well?')">Do you create mobile apps as well?</div>
-        <div class="bubble" onclick="showAnswer('What are your payment terms?')">What are your payment terms?</div>
-        <div class="text-display" id="textDisplay">Click on a bubble to see the answer!</div>
+        <div class="bubble" onclick="showAnswer('Hva koster det å ansette en webutvikler?')">Hva koster det å ansette en webutvikler?</div>
+        <div class="bubble" onclick="showAnswer('Hva er Vedøy Ventures sine verdier?')">Hva er Vedøy Ventures sine verdier?</div>
+        <div class="bubble" onclick="showAnswer('Hvor lang tid kan prosessen ta?')">Hvor lang tid kan prosessen ta?</div>
+        <div class="bubble" onclick="showAnswer('Hvordan vil prosessen foregå?')">Hvordan vil prosessen foregå?</div>
+        <div class="bubble" onclick="showAnswer('Tilbyr dere støtte etter lansering?')">Tilbyr dere støtte etter lansering?</div>
+        <div class="bubble" onclick="showAnswer('Kan dere håndtere e-handelsprosjekter?')">Kan dere håndtere e-handelsprosjekter?</div>
+        <div class="bubble" onclick="showAnswer('Hvilke bransjer har dere jobbet med?')">Hvilke bransjer har dere jobbet med?</div>
+        <div class="bubble" onclick="showAnswer('Hva gjør Vedøy Ventures unike?')">Hva gjør Vedøy Ventures unike?</div>
+        <div class="bubble" onclick="showAnswer('Lager dere også mobilapper?')">Lager dere også mobilapper?</div>
+        <div class="bubble" onclick="showAnswer('Hva er deres betalingsvilkår?')">Hva er deres betalingsvilkår?</div>
+        <div class="text-display" id="textDisplay">Klikk på en boble for å se svaret!</div>
     </div>
+    
 
     <script>
         const answers = {
-            "What is the cost of hiring a web developer?": "The cost of hiring a web developer depends on the complexity of the project. At Vedøy Ventures, we provide tailored solutions to meet your budget, starting from NOK 10,000.",
-            "What are Vedøy Venture's values?": "Vedøy Ventures values creativity, innovation, and transparency. We are dedicated to building long-term partnerships with our clients to ensure their success.",
-            "How long can I expect the process to take?": "The timeline depends on the scope of your project. Simple websites can take 2-4 weeks, while more complex applications might require 6-12 weeks.",
-            "How will a process proceed?": "Our process includes an initial consultation, project planning, design and development, testing, and deployment. We maintain regular communication throughout to ensure your satisfaction.",
-            "Do you provide post-launch support?": "Yes, we offer post-launch support, including maintenance, updates, and troubleshooting to ensure your website or app continues to perform optimally.",
-            "Can you handle e-commerce projects?": "Absolutely. We specialize in creating robust e-commerce platforms with features like secure payment gateways, product catalogs, and seamless user experiences.",
-            "What industries have you worked with?": "We have experience working with industries such as retail, healthcare, education, technology, and more.",
-            "What makes Vedøy Ventures unique?": "Our dedication to innovation, client satisfaction, and transparency sets us apart. We focus on delivering solutions that truly add value to your business.",
-            "Do you create mobile apps as well?": "Yes, we design and develop mobile apps for both iOS and Android, tailored to your business needs.",
-            "What are your payment terms?": "We require a 50% upfront deposit, with the remaining balance payable upon project completion. Custom terms can be discussed based on the project scope."
+            "Hva koster det å ansette en webutvikler?": "Kostnaden for å ansette en webutvikler avhenger av prosjektets kompleksitet. Hos Vedøy Ventures tilbyr vi skreddersydde løsninger for å passe ditt budsjett, med priser fra NOK 10 000.",
+            "Hva er Vedøy Ventures sine verdier?": "Vedøy Ventures verdsetter kreativitet, innovasjon og åpenhet. Vi er dedikert til å bygge langsiktige partnerskap med våre kunder for å sikre deres suksess.",
+            "Hvor lang tid kan prosessen ta?": "Tidsrammen avhenger av prosjektets omfang. Enkle nettsider kan ta 2-4 uker, mens mer komplekse applikasjoner kan kreve 6-12 uker.",
+            "Hvordan vil prosessen foregå?": "Vår prosess inkluderer en innledende konsultasjon, prosjektplanlegging, design og utvikling, testing og lansering. Vi opprettholder regelmessig kommunikasjon gjennom hele prosessen for å sikre din tilfredshet.",
+            "Tilbyr dere støtte etter lansering?": "Ja, vi tilbyr støtte etter lansering, inkludert vedlikehold, oppdateringer og feilsøking for å sikre at nettstedet eller appen din fungerer optimalt.",
+            "Kan dere håndtere e-handelsprosjekter?": "Absolutt. Vi spesialiserer oss på å lage robuste e-handelsplattformer med funksjoner som sikre betalingsløsninger, produktkataloger og sømløse brukeropplevelser.",
+            "Hvilke bransjer har dere jobbet med?": "Vi har erfaring fra bransjer som detaljhandel, helsevesen, utdanning, teknologi og mer.",
+            "Hva gjør Vedøy Ventures unike?": "Vår dedikasjon til innovasjon, kundetilfredshet og åpenhet skiller oss ut. Vi fokuserer på å levere løsninger som virkelig tilfører verdi til din virksomhet.",
+            "Lager dere også mobilapper?": "Ja, vi designer og utvikler mobilapper for både iOS og Android, tilpasset dine forretningsbehov.",
+            "Hva er deres betalingsvilkår?": "Vi krever et forskudd på 50 %, med det resterende beløpet betalbart ved prosjektets fullføring. Tilpassede vilkår kan diskuteres basert på prosjektets omfang."
         };
+
 
         function showAnswer(question) {
             const textDisplay = document.getElementById('textDisplay');
