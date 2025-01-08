@@ -7,7 +7,86 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="assets/images/image.png">
     <link rel="icon" href="assets/images/Beep.png" type="image/png">
+    <style>
 
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bubble {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color:  #359381;
+            color: white;
+            text-align: center;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .bubble:hover {
+            transform: scale(1.1);
+            background-color: #0056b3;
+        }
+
+        .text-display {
+            width: 70%;
+            max-width: 600px;
+            height: 200px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            color: #333;
+            overflow-y: auto;
+            position: relative;
+            z-index: 10;
+
+        }
+
+        /* Bubble placement */
+        .bubble:nth-child(1) { top: 20%; left: -20%; z-index: 5; } 
+        .bubble:nth-child(2) { top: 20%; right: -20%; z-index: 5; } 
+        .bubble:nth-child(3) { bottom: 5%; left: -20%; z-index: 5; } 
+        .bubble:nth-child(4) { bottom: 5%; right: 20%; z-index: 5; }
+        .bubble:nth-child(5) { top: 50%; left: -10%; z-index: 5; }
+        .bubble:nth-child(6) { top: 80%; left: 25%; z-index: 5; }
+        .bubble:nth-child(7) { bottom: 5%; right: 1%; z-index: 5; }
+        .bubble:nth-child(8) { top: 20%; left: 20%; z-index: 5; }
+        .bubble:nth-child(9) { bottom: 40%; right: -20%; z-index: 5; }
+        .bubble:nth-child(10) { top: 10%; right: 25%; z-index: 5; }
+    </style>
 </head>
 <body>
     <header>
@@ -16,12 +95,42 @@
             <a href="index.html">Hjem</a>
             <a href="about.html" >Om oss</a>
             <a href="tjenester.html">Tjenester</a>
-            <a href="kontakt.html" class="active">Kontakt</a>
+            <a href="kontakt.html" class="active">FAQ</a>
 
         </nav>
     </header>
+    <div class="container">
+        <div class="bubble" onclick="showAnswer('What is the cost of hiring a web developer?')">What is the cost of hiring a web developer?</div>
+        <div class="bubble" onclick="showAnswer('What are Vedøy Venture\'s values?')">What are Vedøy Venture's values?</div>
+        <div class="bubble" onclick="showAnswer('How long can I expect the process to take?')">How long can the process take?</div>
+        <div class="bubble" onclick="showAnswer('How will a process proceed?')">How will the process proceed?</div>
+        <div class="bubble" onclick="showAnswer('Do you provide post-launch support?')">Do you provide post-launch support?</div>
+        <div class="bubble" onclick="showAnswer('Can you handle e-commerce projects?')">Can you handle e-commerce projects?</div>
+        <div class="bubble" onclick="showAnswer('What industries have you worked with?')">What industries have you worked with?</div>
+        <div class="bubble" onclick="showAnswer('What makes Vedøy Ventures unique?')">What makes Vedøy Ventures unique?</div>
+        <div class="bubble" onclick="showAnswer('Do you create mobile apps as well?')">Do you create mobile apps as well?</div>
+        <div class="bubble" onclick="showAnswer('What are your payment terms?')">What are your payment terms?</div>
+        <div class="text-display" id="textDisplay">Click on a bubble to see the answer!</div>
+    </div>
 
-    <script src="scripts/script.js"></script>
-    
+    <script>
+        const answers = {
+            "What is the cost of hiring a web developer?": "The cost of hiring a web developer depends on the complexity of the project. At Vedøy Ventures, we provide tailored solutions to meet your budget, starting from NOK 10,000.",
+            "What are Vedøy Venture's values?": "Vedøy Ventures values creativity, innovation, and transparency. We are dedicated to building long-term partnerships with our clients to ensure their success.",
+            "How long can I expect the process to take?": "The timeline depends on the scope of your project. Simple websites can take 2-4 weeks, while more complex applications might require 6-12 weeks.",
+            "How will a process proceed?": "Our process includes an initial consultation, project planning, design and development, testing, and deployment. We maintain regular communication throughout to ensure your satisfaction.",
+            "Do you provide post-launch support?": "Yes, we offer post-launch support, including maintenance, updates, and troubleshooting to ensure your website or app continues to perform optimally.",
+            "Can you handle e-commerce projects?": "Absolutely. We specialize in creating robust e-commerce platforms with features like secure payment gateways, product catalogs, and seamless user experiences.",
+            "What industries have you worked with?": "We have experience working with industries such as retail, healthcare, education, technology, and more.",
+            "What makes Vedøy Ventures unique?": "Our dedication to innovation, client satisfaction, and transparency sets us apart. We focus on delivering solutions that truly add value to your business.",
+            "Do you create mobile apps as well?": "Yes, we design and develop mobile apps for both iOS and Android, tailored to your business needs.",
+            "What are your payment terms?": "We require a 50% upfront deposit, with the remaining balance payable upon project completion. Custom terms can be discussed based on the project scope."
+        };
+
+        function showAnswer(question) {
+            const textDisplay = document.getElementById('textDisplay');
+            textDisplay.textContent = answers[question];
+        }
+    </script>
 </body>
 </html>
