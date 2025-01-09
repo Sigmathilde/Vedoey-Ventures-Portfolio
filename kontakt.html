@@ -2,14 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="assets/images/image.png">
     <link rel="icon" href="assets/images/Beep.png" type="image/png">
     <style>
-
-        
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -22,7 +19,7 @@
             overflow: hidden;
         }
 
-        .containerbubbles {
+        .container {
             position: relative;
             width: 90%;
             max-width: 800px;
@@ -32,7 +29,41 @@
             align-items: center;
         }
 
+        .bubble {
+            position: absolute;
+            width: 150px; /* Increased bubble size */
+            height: 150px; /* Increased bubble size */
+            background-color: #359381;
+            color: white;
+            text-align: center;
+            font-size: 0.8rem; /* Smaller text inside the bubbles */
+            font-weight: bold;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
 
+        .text-display {
+            position: absolute;
+            width: 60%; /* Make the answer box responsive */
+            max-width: 500px;
+            height: 200px; /* Centered answer box size */
+            background-color: #e8f5f2;
+            border: 3px solid #359381;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 1.1rem; /* Larger answer text */
+            font-weight: bold;
+            color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 10; /* Ensure it stays above moving bubbles */
+        }
     </style>
 </head>
 <body>
@@ -40,13 +71,13 @@
         <h2 class="logo">Vedøy Ventures</h2>
         <nav class="navigation">
             <a href="index.html">Hjem</a>
-            <a href="about.html" >Om oss</a>
+            <a href="about.html">Om oss</a>
             <a href="tjenester.html">Tjenester</a>
             <a href="kontakt.html" class="active">FAQ</a>
-
         </nav>
     </header>
-    <div class="containerbubbles">
+    <div class="container">
+        <div class="text-display" id="textDisplay">Klikk på en boble for å se svaret!</div>
         <div class="bubble" onclick="showAnswer('Hva koster det å ansette en webutvikler?')">Hva koster det å ansette en webutvikler?</div>
         <div class="bubble" onclick="showAnswer('Hva er Vedøy Ventures sine verdier?')">Hva er Vedøy Ventures sine verdier?</div>
         <div class="bubble" onclick="showAnswer('Hvor lang tid kan prosessen ta?')">Hvor lang tid kan prosessen ta?</div>
@@ -57,29 +88,52 @@
         <div class="bubble" onclick="showAnswer('Hva gjør Vedøy Ventures unike?')">Hva gjør Vedøy Ventures unike?</div>
         <div class="bubble" onclick="showAnswer('Lager dere også mobilapper?')">Lager dere også mobilapper?</div>
         <div class="bubble" onclick="showAnswer('Hva er deres betalingsvilkår?')">Hva er deres betalingsvilkår?</div>
-        <div class="text-display" id="textDisplay">Klikk på en boble for å se svaret!</div>
     </div>
     
-
     <script>
         const answers = {
             "Hva koster det å ansette en webutvikler?": "Kostnaden for å ansette en webutvikler avhenger av prosjektets kompleksitet. Hos Vedøy Ventures tilbyr vi skreddersydde løsninger for å passe ditt budsjett, med priser fra NOK 10 000.",
             "Hva er Vedøy Ventures sine verdier?": "Vedøy Ventures verdsetter kreativitet, innovasjon og åpenhet. Vi er dedikert til å bygge langsiktige partnerskap med våre kunder for å sikre deres suksess.",
             "Hvor lang tid kan prosessen ta?": "Tidsrammen avhenger av prosjektets omfang. Enkle nettsider kan ta 2-4 uker, mens mer komplekse applikasjoner kan kreve 6-12 uker.",
-            "Hvordan vil prosessen foregå?": "Vår prosess inkluderer en innledende konsultasjon, prosjektplanlegging, design og utvikling, testing og lansering. Vi opprettholder regelmessig kommunikasjon gjennom hele prosessen for å sikre din tilfredshet.",
-            "Tilbyr dere støtte etter lansering?": "Ja, vi tilbyr støtte etter lansering, inkludert vedlikehold, oppdateringer og feilsøking for å sikre at nettstedet eller appen din fungerer optimalt.",
-            "Kan dere håndtere e-handelsprosjekter?": "Absolutt. Vi spesialiserer oss på å lage robuste e-handelsplattformer med funksjoner som sikre betalingsløsninger, produktkataloger og sømløse brukeropplevelser.",
+            "Hvordan vil prosessen foregå?": "Vår prosess inkluderer en innledende konsultasjon, prosjektplanlegging, design, utvikling, testing og lansering.",
+            "Tilbyr dere støtte etter lansering?": "Ja, vi tilbyr støtte etter lansering, inkludert vedlikehold og oppdateringer.",
+            "Kan dere håndtere e-handelsprosjekter?": "Absolutt. Vi spesialiserer oss på å lage robuste e-handelsplattformer.",
             "Hvilke bransjer har dere jobbet med?": "Vi har erfaring fra bransjer som detaljhandel, helsevesen, utdanning, teknologi og mer.",
-            "Hva gjør Vedøy Ventures unike?": "Vår dedikasjon til innovasjon, kundetilfredshet og åpenhet skiller oss ut. Vi fokuserer på å levere løsninger som virkelig tilfører verdi til din virksomhet.",
-            "Lager dere også mobilapper?": "Ja, vi designer og utvikler mobilapper for både iOS og Android, tilpasset dine forretningsbehov.",
-            "Hva er deres betalingsvilkår?": "Vi krever et forskudd på 50 %, med det resterende beløpet betalbart ved prosjektets fullføring. Tilpassede vilkår kan diskuteres basert på prosjektets omfang."
+            "Hva gjør Vedøy Ventures unike?": "Vår dedikasjon til innovasjon, kundetilfredshet og åpenhet skiller oss ut.",
+            "Lager dere også mobilapper?": "Ja, vi designer og utvikler mobilapper for både iOS og Android.",
+            "Hva er deres betalingsvilkår?": "Vi krever et forskudd på 50 %, med resten betalbart ved prosjektets fullføring."
         };
-
 
         function showAnswer(question) {
             const textDisplay = document.getElementById('textDisplay');
             textDisplay.textContent = answers[question];
         }
+
+        const bubbles = document.querySelectorAll('.bubble');
+        bubbles.forEach((bubble) => {
+            let x = Math.random() * window.innerWidth;
+            let y = Math.random() * window.innerHeight;
+            let dx = (Math.random() - 0.5) * 2;
+            let dy = (Math.random() - 0.5) * 2;
+
+            bubble.style.left = `${x}px`;
+            bubble.style.top = `${y}px`;
+
+            function moveBubble() {
+                x += dx;
+                y += dy;
+
+                if (x <= 0 || x + 150 >= window.innerWidth) dx *= -1; /* Updated for larger bubbles */
+                if (y <= 0 || y + 150 >= window.innerHeight) dy *= -1;
+
+                bubble.style.left = `${x}px`;
+                bubble.style.top = `${y}px`;
+
+                requestAnimationFrame(moveBubble);
+            }
+
+            moveBubble();
+        });
     </script>
 </body>
 </html>
