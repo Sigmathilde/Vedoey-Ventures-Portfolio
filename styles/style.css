@@ -379,3 +379,138 @@ body {
 .bubble:nth-child(8) { top: 20%; left: 20%; z-index: 5; }
 .bubble:nth-child(9) { bottom: 40%; right: -20%; z-index: 5; }
 .bubble:nth-child(10) { top: 10%; right: 25%; z-index: 5; }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 2em;
+    color: #359381;
+    pointer-events: none;
+    text-decoration: none;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #359381;
+    padding: 6px 15px;
+    border-radius: 20px;
+    margin: 0 10px;
+    font-weight: 600;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    background: #359381;
+    color: white;
+}
+
+.slider {
+    width: 100%;
+    max-width: 60%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+    text-align: center;
+    background: #fff;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.slide .content {
+    padding: 20px;
+}
+
+.slide h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.slide p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.button {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.2rem;
+}
+
+.button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.indicators {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background: #333;
+}
