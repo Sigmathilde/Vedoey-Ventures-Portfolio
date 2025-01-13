@@ -259,7 +259,7 @@ body {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     width: 300px;
-    height: 450px; /* Ensure all cards are the same height */
+    height: 500px; /* Ensure all cards are the same height */
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
     position: relative;
@@ -270,7 +270,7 @@ body {
 
 .team-card img {
     width: 100%; /* Ensure the image spans the width of the card */
-    height: 200px; /* Set a consistent height for all images */
+    height: 250px; /* Set a consistent height for all images */
     object-fit: cover; /* Maintain aspect ratio while filling the area */
     border-bottom: 2px solid #359381;
 }
