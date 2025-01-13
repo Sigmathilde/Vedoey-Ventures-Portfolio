@@ -41,3 +41,4 @@ indicators.forEach((indicator, index) => {
 setInterval(() => {
     next.click();
 }, 7000);
+

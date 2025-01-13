@@ -432,11 +432,12 @@ header {
 
 .slider {
     width: 100%;
-    max-width: 60%;
+    max-width: 50%;
     overflow: hidden;
     position: relative;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin: auto; /* Center the slider */
 }
 
 .slides {
@@ -478,6 +479,7 @@ header {
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
+    pointer-events: none; /* Allow clicks only on buttons, not the container */
 }
 
 .button {
@@ -487,11 +489,23 @@ header {
     padding: 10px;
     cursor: pointer;
     border-radius: 50%;
-    font-size: 1.2rem;
+    font-size: 3rem;
+    pointer-events: all; /* Enable pointer events for the buttons */
+    transition: background 0.3s ease;
 }
 
 .button:hover {
     background: rgba(0, 0, 0, 0.8);
+}
+
+.button.prev {
+    position: absolute;
+    left: 10px; /* Adjust the distance from the slider edge */
+}
+
+.button.next {
+    position: absolute;
+    right: 10px; /* Adjust the distance from the slider edge */
 }
 
 .indicators {
@@ -513,4 +527,119 @@ header {
 
 .indicator.active {
     background: #333;
+}
+
+.fancy-section {
+    background: linear-gradient(to right, #359381, #4ba352);
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+.text-and-image {
+    padding: 5%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.text-content {
+    flex: 1;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #424242;
+}
+
+.image-content img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.features {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.feature-card {
+    background: #ffffff;
+    border: 1px solid #c8e6c9;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+    max-width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    font-size: 2em;
+    color: #4caf50;
+    margin-bottom: 10px;
+}
+
+.feature-card h3 {
+    font-size: 1.2em;
+    color: #359381;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    font-size: 1em;
+    color: #616161;
+}
+
+.animated-title {
+    padding-left: 13%;
+    font-size: 2.5em;
+    color: #2e7d32;
+    text-align: center;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block; /* For å gjøre transformasjoner jevne */
+    cursor: pointer;
+}
+
+.animated-title .icon {
+    transition: transform 0.3s ease;
+}
+
+.animated-title:hover {
+    transform: scale(1.1); /* Skalerer overskriften litt større */
+    color: #FCD53F; /* Endrer fargen til en lysere grønn */
+}
+
+.animated-title:hover .icon {
+    transform: rotate(20deg); /* Liten rotering av ikonene for ekstra livlighet */
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.animated-title {
+    animation: pulse 3s infinite; /* Overskriften pulserer sakte */
+}
+
+.hover-highlight {
+    background-color: transparent; /* Standard bakgrunnsfarge */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Jevn overgang */
+    padding: 5px; /* Litt padding for å gjøre teksten mer tydelig */
+    border-radius: 5px; /* Myke hjørner for en mer elegant stil */
+}
+
+.hover-highlight:hover {
+    background-color: #003329; /* Svart bakgrunn ved hover */
+    color: #ffffff; /* Hvit tekst for kontrast */
 }
