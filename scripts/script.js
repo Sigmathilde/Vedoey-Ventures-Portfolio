@@ -42,3 +42,37 @@ setInterval(() => {
     next.click();
 }, 7000);
 
+const appSlider = document.querySelector('.app-slider');
+const appSlides = document.querySelectorAll('.app-slide');
+const appPrev = document.getElementById('app-prev');
+const appNext = document.getElementById('app-next');
+const appDots = document.querySelectorAll('.app-dot');
+
+let appCurrentIndex = 0;
+
+function updateAppSlider(index) {
+    appSlider.style.transform = `translateX(-${index * 100}%)`;
+    appDots.forEach(dot => dot.classList.remove('active'));
+    appDots[index].classList.add('active');
+}
+
+appPrev.addEventListener('click', () => {
+    appCurrentIndex = (appCurrentIndex - 1 + appSlides.length) % appSlides.length;
+    updateAppSlider(appCurrentIndex);
+});
+
+appNext.addEventListener('click', () => {
+    appCurrentIndex = (appCurrentIndex + 1) % appSlides.length;
+    updateAppSlider(appCurrentIndex);
+});
+
+appDots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        appCurrentIndex = index;
+        updateAppSlider(appCurrentIndex);
+    });
+});
+
+setInterval(() => {
+    appNext.click();
+}, 5000);
