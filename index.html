@@ -70,26 +70,25 @@
                     </div>
                 </div>
             </section>
-
-            <section class="app-slider-container">
-                <div class="app-slider">
-                    <div class="app-slide"><img src="assets/images/app1.png" alt="Project 1"></div>
-                    <div class="app-slide"><img src="assets/images/app2.png" alt="Project 2"></div>
-                    <div class="app-slide"><img src="assets/images/app3.png" alt="Project 3"></div>
-                </div>
-                <div class="app-navigation">
-                    <button class="app-nav-btn" id="app-prev">&#10094;</button>
-                    <button class="app-nav-btn" id="app-next">&#10095;</button>
-                </div>
-                <div class="app-dots">
-                    <span class="app-dot active" data-index="0"></span>
-                    <span class="app-dot" data-index="1"></span>
-                    <span class="app-dot" data-index="2"></span>
-                </div>
-            </section>
-        </section>
+            
 
         </section>
+
+        <div class="heading" id="project-title">Prosjekt 1</div>
+        <div class="slider" onmouseover="pauseSlider()" onmouseout="resumeSlider()">
+          <div class="slider-container" id="slider-container">
+            <img src="assets/images/app1.png" alt="Bilde 1" data-title="MatdelingsApp" data-description="Dette er beskrivelse av Prosjekt 1" onclick="showModal(this)">
+            <img src="assets/images/app2.png" alt="Bilde 2" data-title="Dugnadsapp" data-description="Dette er beskrivelse av Prosjekt 2" onclick="showModal(this)">
+            <img src="assets/images/app1.png" alt="Bilde 3" data-title="Prosjekt 3" data-description="Dette er beskrivelse av Prosjekt 3" onclick="showModal(this)">
+          </div>
+        </div>
+      
+        <div class="modal" id="modal">
+          <div class="modal-content">
+            <h2 id="modal-title">Prosjekt 1</h2>
+            <p id="modal-description">Dette er beskrivelse av Prosjekt 1</p>
+          </div>
+        </div>
  
     </section>
     <script src="scripts/script.js"></script>
