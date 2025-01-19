@@ -265,13 +265,14 @@ body {
     display: flex;
     flex-direction: column; /* Stack items vertically */
     justify-content: space-between; /* Space out content evenly */
+    border: 3px solid #8B4513; /* Bark-like brown border */
 }
 
 .team-card img {
     width: 100%; /* Ensure the image spans the width of the card */
     height: 250px; /* Set a consistent height for all images */
     object-fit: cover; /* Maintain aspect ratio while filling the area */
-    border-bottom: 2px solid #359381;
+    border-bottom: 2px solid #8B4513;
 }
 
 .team-card h3,
@@ -286,7 +287,7 @@ body {
 
 .team-name {
     font-size: 22px;
-    color: #359381;
+    color: #8B4513;
     margin-top: 15px;
 }
 
