@@ -74,11 +74,10 @@ header {
 
 }
 
-
 .sec {
     position: relative;
     background: #003329;
-    padding: 100px;
+    padding: 175px 125px 10px 125px;
 }
 
 .sec h2 {
@@ -408,13 +407,6 @@ header {
     z-index: 100;
 }
 
-.logo {
-    font-size: 2em;
-    color: #359381;
-    pointer-events: none;
-    text-decoration: none;
-}
-
 .navigation a {
     text-decoration: none;
     color: #359381;
@@ -531,14 +523,14 @@ header {
 
 .fancy-section {
     background: linear-gradient(to right, #359381, #4ba352);
-    padding: 40px 20px;
+    padding: 30px 50px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;
 }
 
 .text-and-image {
-    padding: 5%;
+    padding: 3%;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -549,8 +541,8 @@ header {
 
 .text-content {
     flex: 1;
-    font-size: 1.1em;
-    line-height: 1.6;
+    font-size: 1.2em;
+    line-height: 1.1;
     color: #424242;
 }
 
@@ -563,7 +555,7 @@ header {
 .features {
     display: flex;
     gap: 20px;
-    margin-top: 30px;
+    margin-top: 0px;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -708,3 +700,20 @@ header {
   .modal-content p {
     margin: 0;
   }
+  
+  /* Remove default link styles */
+.logo-link {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Inherits the text color from parent */
+    display: inline-block; /* Ensures proper alignment */
+}
+
+/* Optional: Logo-specific styling */
+.logo {
+    font-size: 2em;
+    color: #359381;
+    font-weight: bold;
+    margin: 0; /* Removes default margin from <h2> */
+    pointer-events: none;
+    text-decoration: none;
+}
