@@ -77,7 +77,7 @@ header {
 .sec {
     position: relative;
     background: #003329;
-    padding: 175px 125px 10px 125px;
+    padding: 35px 100px 10px 125px;
 }
 
 .sec h2 {
@@ -265,14 +265,14 @@ body {
     display: flex;
     flex-direction: column; /* Stack items vertically */
     justify-content: space-between; /* Space out content evenly */
-    border: 3px solid #8B4513; /* Bark-like brown border */
+    border: 3px solid #359381; /* Bark-like brown border */
 }
 
 .team-card img {
     width: 100%; /* Ensure the image spans the width of the card */
     height: 250px; /* Set a consistent height for all images */
     object-fit: cover; /* Maintain aspect ratio while filling the area */
-    border-bottom: 2px solid #8B4513;
+    border-bottom: 2px solid #359381;
 }
 
 .team-card h3,
@@ -287,7 +287,7 @@ body {
 
 .team-name {
     font-size: 22px;
-    color: #8B4513;
+    color: #359381;
     margin-top: 15px;
 }
 
