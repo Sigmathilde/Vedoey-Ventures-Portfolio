@@ -41,7 +41,7 @@
     /* Styling for the header section */
     header {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
 
     header h1 {
@@ -55,33 +55,53 @@
     }
 
     /* Portfolio section layout */
+    .portfolio-section {
+      text-align: center;
+      margin-bottom: 20px;
+      margin-top: 60px; /* Increased top margin to create space from navbar */
+    }
+
+    .portfolio-section h2 {
+      font-size: 1.8rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .portfolio-section p {
+      font-size: 1rem;
+      color: #555;
+    }
+
     .portfolio {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
-      padding-top: 150px; /* Adds spacing from the top */
+      padding-top: 20px; /* Adds spacing from the top */
     }
 
     /* Individual app showcase container */
     .mobile-box {
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      width: 210px;
-      padding: 15px;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center content horizontally */
+      gap: 10px;
+      flex: 0 0 300px; /* Ensures all boxes are the same width */
     }
 
     /* Frame for video previews */
     .screen {
       position: relative;
-      width: 180px;
-      height: 320px;
+      width: 180px; /* Unified width */
+      height: 340px; /* Unified height for phone ratio */
       border-radius: 20px;
       overflow: hidden;
       border: 2px solid #ddd;
-      margin-bottom: 15px;
+      display: flex;
+      justify-content: center; /* Center video */
+      align-items: center; /* Center video */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     /* Video styling for consistent appearance */
@@ -92,14 +112,14 @@
     }
 
     .app-title {
-      font-size: 1.2rem;
+      font-size: 1.3rem; /* Increased font size */
       font-weight: bold;
-      margin-bottom: 10px;
     }
 
     .app-description {
       font-size: 1rem;
       color: #555;
+      max-width: 240px; /* Matches the screen width */
     }
 
     /* Footer styling */
@@ -107,6 +127,13 @@
       text-align: center;
       margin-top: 40px;
       color: #aaa;
+    }
+
+    /* Add hover effect for modern touch */
+    .screen:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }
 
     /* Responsive styling for smaller screens */
@@ -126,15 +153,21 @@
     /* Responsive styling for larger screens */
     @media screen and (min-width: 1025px) {
       .mobile-box {
-        width: 30%; /* Ensures the box maintains a structured layout on desktops */
+        width: 30%; /* Adjusted width to fit 3 boxes side by side */
       }
     }
   </style>
 
   <main>
+    <div class="portfolio-section">
+      <h2>A Glimpse Into Our Work</h2>
+      <p>Explore some of the innovative apps we've created to make everyday life smarter and more efficient.</p>
+    </div>
     <div class="portfolio">
       <!-- Mobile App Showcase 1 -->
       <div class="mobile-box">
+        <p class="app-title">Task Master</p>
+        <p class="app-description">An app that helps you manage your tasks efficiently with AI recommendations.</p>
         <div class="screen">
           <!-- Task Master app video demo -->
           <video controls muted playsinline loading="lazy">
@@ -142,12 +175,12 @@
             Your browser does not support the video tag.
           </video>
         </div>
-        <p class="app-title">Task Master</p>
-        <p class="app-description">An app that helps you manage your tasks efficiently with AI recommendations.</p>
       </div>
 
       <!-- Mobile App Showcase 2 -->
       <div class="mobile-box">
+        <p class="app-title">Health Tracker</p>
+        <p class="app-description">A comprehensive app to monitor your health and fitness goals.</p>
         <div class="screen">
           <!-- Health Tracker app video demo -->
           <video controls muted playsinline loading="lazy">
@@ -155,12 +188,12 @@
             Your browser does not support the video tag.
           </video>
         </div>
-        <p class="app-title">Health Tracker</p>
-        <p class="app-description">A comprehensive app to monitor your health and fitness goals.</p>
       </div>
 
       <!-- Mobile App Showcase 3 -->
       <div class="mobile-box">
+        <p class="app-title">Language Learner</p>
+        <p class="app-description">Learn new languages with interactive lessons and games.</p>
         <div class="screen">
           <!-- Language Learner app video demo -->
           <video controls muted playsinline loading="lazy">
@@ -168,23 +201,7 @@
             Your browser does not support the video tag.
           </video>
         </div>
-        <p class="app-title">Language Learner</p>
-        <p class="app-description">Learn new languages with interactive lessons and games.</p>
       </div>
-
-      <!-- Mobile App Showcase 4 -->
-      <div class="mobile-box">
-        <div class="screen">
-          <!-- Finance Buddy app video demo -->
-          <video controls muted playsinline loading="lazy">
-            <source src="videos/app4-demo.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <p class="app-title">Finance Buddy</p>
-        <p class="app-description">Track your expenses and manage your finances effortlessly.</p>
-      </div>
-
     </div>
   </main>
 
