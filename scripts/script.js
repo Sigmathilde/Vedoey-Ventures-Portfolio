@@ -76,4 +76,3 @@ appDots.forEach((dot, index) => {
 setInterval(() => {
     appNext.click();
 }, 5000);
-

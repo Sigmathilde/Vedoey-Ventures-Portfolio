@@ -3,63 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Section</title>
-    <!-- Import Google Fonts for custom typography -->
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" href="assets/images/Beep.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@300&family=Lato:wght@400&display=swap" rel="stylesheet">
     <style>
+
         /* Base styling for the body */
         body {
-            font-family: 'Lato', sans-serif; /* Default font for general text */
-            background-color: #F7FAF9; /* Light background for clean design */
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box; /* Ensures padding and border are included in element's total size */
+            background-color: #F7FAF9; /* Sets a light background color */
+            margin: 0; /* Removes default margin */
+            padding: 0; /* Removes default padding */
+            box-sizing: border-box; /* Ensures padding and borders are included in size calculations */
+            font-family: Arial, sans-serif; /* Default font family */
         }
 
         /* Styling for the team section container */
         .team-section {
             display: flex;
-            gap: 40px; /* Spacing between cards */
-            padding-top: 150px; /* Adjusted to reduce spacing below the header */
-            justify-content: center; /* Centers the cards horizontally */
-            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+            gap: 40px; /* Space between cards */
+            padding-top: 150px; /* Space from the top */
+            justify-content: center; /* Aligns cards in the center horizontally */
+            flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
         }
 
         /* Individual team member card */
         .card {
-            background-color: #EAF6F6; /* Soft green for a professional look */
-            border: 1px solid #A7D7C5; /* Subtle border for definition */
-            border-radius: 10px; /* Rounded corners for modern design */
-            padding: 20px; /* Adjusted padding for better spacing */
-            width: 300px; /* Reduced width for smaller cards */
-            height: 450px; /* Increased height for longer cards */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhanced shadow for more depth */
-            text-align: center; /* Centers text inside the card */
-            margin-bottom: 30px; /* Adds space between rows when wrapping */
+            background-color: #EAF6F6; /* Light green background for the cards */
+            border: 1px solid #A7D7C5; /* Subtle border color */
+            border-radius: 10px; /* Rounded corners */
+            padding: 20px; /* Inner spacing */
+            width: 20%; /* Percentage-based width for better responsiveness */
+            max-width: clamp(250px, 20%, 300px); /* Uses clamp for adaptive card sizing */
+            height: 550px; /* Fixed card height */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+            text-align: center; /* Centers text */
+            margin-bottom: 30px; /* Space between rows when wrapping */
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: space-between; /* Ensures even spacing between elements */
         }
 
         /* Styling for team member image */
         .image {
-            width: 100px; /* Adjusted size for better proportions */
-            height: 100px;
+            width: 100px; /* Fixed width of image */
+            height: 100px; /* Fixed height of image */
             border-radius: 50%; /* Makes the image circular */
-            margin: 0 auto 15px; /* Centered the image and added space below */
-            object-fit: cover; /* Ensures image maintains aspect ratio */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds slight depth to the image */
+            margin: 0 auto 15px; /* Centers the image and adds space below */
+            object-fit: cover; /* Ensures the image scales properly */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds slight shadow */
         }
 
         /* Styling for the team member name */
         .name {
-            font-family: 'Montserrat', sans-serif; /* Bold and modern font */
+            font-family: 'Montserrat', sans-serif; /* Bold, modern font */
             font-weight: 600; /* Bold weight for emphasis */
-            font-size: 1.5em; /* Slightly smaller font size for balance */
-            color: #306754; /* Dark green for professionalism */
+            font-size: 1.5em; /* Adjusted font size */
+            color: #306754; /* Dark green for readability */
             margin-bottom: 10px; /* Space below the name */
             white-space: nowrap; /* Prevents text wrapping */
-            overflow: hidden; /* Ensures long names don’t overflow */
+            overflow: hidden; /* Hides overflow text */
             text-overflow: ellipsis; /* Adds ellipsis for truncated text */
         }
 
@@ -68,163 +70,64 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 10px;
+            row-gap: 8px; /* Vertical space between tags */
+            column-gap: 8px; /* Horizontal space between tags */
+            margin-bottom: 10px; /* Space below tags */
         }
 
         .skill-tag {
             background-color: #D1F0E3; /* Light green background */
             color: #306754; /* Dark green text */
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.85em;
-            font-weight: 500;
-            font-family: 'Poppins', sans-serif;
+            padding: 5px 10px; /* Inner spacing */
+            border-radius: 5px; /* Rounded edges */
+            font-size: 0.85em; /* Slightly smaller text */
+            font-weight: 500; /* Medium weight */
+            font-family: 'Poppins', sans-serif; /* Matches overall design */
         }
 
         /* Styling for team member role */
         .role {
-            font-family: 'Poppins', sans-serif; /* Friendly and clean font */
-            font-weight: 500; /* Semi-bold for distinction */
+            font-family: 'Poppins', sans-serif; /* Clean and modern font */
+            font-weight: 500; /* Semi-bold for emphasis */
             font-size: 1.2em; /* Slightly smaller than name */
-            color: #355E5C; /* Complementary dark color */
+            color: #355E5C; /* Complementary dark green color */
             margin-bottom: 15px; /* Space below the role */
         }
 
         /* Styling for team member description */
         .description {
-            font-family: 'Lato', sans-serif; /* Default font for readability */
-            font-weight: 400; /* Normal weight for paragraphs */
-            font-size: 1em; /* Standard text size */
-            color: #4F716C; /* Muted green for subtlety */
-            line-height: 1.6; /* Improves readability with spacing */
+            font-family: 'Lato', sans-serif; /* Readable font */
+            font-weight: 400; /* Normal text weight */
+            font-size: 1em; /* Standard size for paragraphs */
+            color: #4F716C; /* Muted green for readability */
+            line-height: 1.6; /* Improved spacing for readability */
         }
 
         /* Styling for contact button */
         .contact-btn {
-            background-color: #359381; /* Green button for consistency */
+            background-color: #359381; /* Green button background */
             color: white; /* White text for contrast */
             font-family: 'Poppins', sans-serif; /* Matches the rest of the design */
             font-weight: 500; /* Slightly bold for visibility */
             padding: 10px 20px; /* Padding for comfortable click area */
             border: none; /* Removes default border */
-            border-radius: 5px; /* Rounded corners for a friendly look */
-            cursor: pointer; /* Indicates interactivity */
-            margin-top: 15px; /* Adds space above the button */
+            border-radius: 5px; /* Rounded edges */
+            cursor: pointer; /* Pointer cursor on hover */
+            margin-top: 15px; /* Space above the button */
             display: flex;
-            align-items: center;
-            justify-content: center;
+            align-items: center; /* Centers icon and text */
+            justify-content: center; /* Centers button content */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Adds smooth transitions for hover state */
         }
 
         .contact-btn:hover {
-            background-color: #2B5E4C; /* Darker green for hover state */
+            background-color: #2B5E4C; /* Darker green on hover */
+            transform: scale(1.05); /* Slightly enlarges button on hover */
         }
 
         .contact-btn i {
             margin-right: 8px; /* Space between icon and text */
         }
-
-        /* Header styling */
-        header {
-            position: fixed; /* Ensures the header stays visible */
-            top: 0;
-            left: 0;
-            width: 100%; /* Spans the full width of the page */
-            padding: 16px 24px; /* Adjusted padding to fit within smaller screens */
-            background-color: #F7FAF9; /* Background color to differentiate header */
-            display: flex;
-            justify-content: space-between; /* Aligns logo and navigation */
-            align-items: center; /* Vertically centers content */
-            z-index: 100; /* Ensures it stays above other elements */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds shadow for separation */
-        }
-
-        /* Styling for navigation links */
-        .navigation a {
-            text-decoration: none; /* Removes underline */
-            color: #2B5E4C; /* Updated to darker green for better contrast */
-            padding: 6px 15px; /* Adds clickable area */
-            border-radius: 20px; /* Rounded corners for buttons */
-            margin: 0 10px; /* Spacing between links */
-            font-weight: 600; /* Bold for visibility */
-        }
-
-        /* Hover and active state for navigation links */
-        .navigation a:hover,
-        .navigation a.active {
-            background: #2B5E4C; /* Darker green background for emphasis */
-            color: white; /* White text for contrast */
-        }
-
-        /* Styling for logo link */
-        .logo-link {
-            text-decoration: none; /* Removes underline */
-            color: inherit; /* Inherits color from parent */
-            display: inline-block; /* Ensures alignment with text */
-        }
-
-        /* Styling for logo text */
-        .logo {
-            font-size: 2em; /* Large font for branding */
-            color: #2B5E4C; /* Updated to darker green for consistency */
-            font-weight: bold; /* Bold for prominence */
-            margin: 0; /* Removes default spacing */
-            pointer-events: auto; /* Re-enables user interaction */
-            text-decoration: none; /* Removes underline */
-        }
-        .parallax {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden; /* Prevent overflow from extending the container */
-}
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 10%;
-  }
-
-  .card-row {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-    padding-top: 40px;
-  }
-
-  .card {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    width: 30%; /* Each card takes 30% of the row */
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-
-  .card img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-  }
-
-  .card h3 {
-    margin: 10px 0;
-  }
-
-  .card p {
-    font-size: 0.9rem;
-    color: #555;
-  }
 
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
@@ -236,9 +139,9 @@
         <a href="home.html" class="logo-link"><h2 class="logo">Vedøy Ventures</h2></a>
         <nav class="navigation">
             <a href="home.html">Hjem</a>
-            <a href="about.html">Om oss</a>
-            <a href="tjenester.html" class="active">Tjenester</a>
-            <a href="prosjekter.html">Portofolio</a>
+            <a href="about.html" class="active">Om oss</a>
+            <a href="tjenester.html">Tjenester</a>
+            <a href="prosjekter.html">Portfolio</a>
         </nav>
     </header>
 

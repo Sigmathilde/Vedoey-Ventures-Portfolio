@@ -4,118 +4,205 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Våre tjenester</title>
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="assets/images/image.png">
     <link rel="icon" href="assets/images/Beep.png" type="image/png">
     <style>
 
-        
-.skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 175px 20px;
-    gap: 40px;
-}
+        /* Container for all skill cards */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 175px 10px;
+            gap: 40px; /* Space between cards */
+        }
 
-.skill-card {
-    border-color: #359381;
-    border-radius: 15px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 300px;
-    height: 450px; /* Increase height for more space */
-    display: flex;
-    flex-direction: column; /* Stack content vertically */
-    justify-content: space-between; /* Distribute space evenly */
-    align-items: center; /* Center items horizontally */
-    transform: perspective(1000px) rotateY(0);
-    transition: transform 0.6s, box-shadow 0.3s;
-    cursor: pointer;
-    text-align: center;
-}
+        /* Individual skill card styling */
+        .skill-card {
+            border-color: #359381;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            height: 450px; /* Increase height for more space */
+            display: flex;
+            flex-direction: column; /* Stack content vertically */
+            justify-content: space-between; /* Distribute space evenly */
+            align-items: center; /* Center items horizontally */
+            transform: perspective(1000px) rotateY(0); /* 3D effect for hover */
+            transition: transform 0.6s, box-shadow 0.3s; /* Smooth animation */
+            cursor: pointer; /* Pointer cursor for interactivity */
+            text-align: center; /* Center text inside cards */
+        }
 
-.skill-card:hover {
-    transform: perspective(1000px) rotateY(10deg);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
-}
+        /* Hover effect for skill cards */
+        .skill-card:hover {
+            transform: perspective(1000px) rotateY(10deg); /* Rotate slightly on hover */
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+        }
 
-.skill-header {
-    background-color: #359381;
-    color: white;
-    font-size: 22px;
-    text-align: center;
-    padding: 15px;
-    width: 100%; /* Ensure consistent width */
-}
+        /* Header section of each card */
+        .skill-header {
+            background-color: #359381; /* Primary theme color */
+            color: white; /* Text color */
+            font-size: 22px;
+            text-align: center;
+            padding: 15px;
+            width: 100%; /* Ensure consistent width */
+        }
 
-.skill-icon {
-    font-size: 80px;
-    color: #359381;
-    text-align: center;
-    margin: 20px 0;
-}
+        /* Icon styling inside cards */
+        .skill-icon {
+            font-size: 80px; /* Large size for emphasis */
+            color: #359381; /* Match theme color */
+            text-align: center;
+            margin: 20px 0; /* Space around icon */
+        }
 
-.skill-description {
-    padding: 20px;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #555;
-    flex-grow: 1; /* Ensure the description stretches to use available space */
-    overflow-y: auto; /* Allow scrolling if text still exceeds available height */
-}
+        /* Description text inside cards */
+        .skill-description {
+            padding: 20px;
+            font-size: 16px;
+            line-height: 1.6; /* Improved readability */
+            color: #333; /* Enhanced contrast for better accessibility */
+            flex-grow: 1; /* Ensure the description stretches to use available space */
+            overflow-y: auto; /* Allow scrolling if text still exceeds available height */
+        }
 
-.skill-footer {
-    background: #359381;
-    padding: 20px;
-    font-size: 14px;
-    
-    color: #ffffff;
-    width: 100%; /* Ensure consistent width */
-}
+        /* Footer section of each card */
+        .skill-footer {
+            background: #359381; /* Match header background */
+            padding: 20px;
+            font-size: 14px;
+            color: #ffffff; /* White text for contrast */
+            width: 100%; /* Ensure consistent width */
+        }
+
+        /* Responsive navigation menu styling */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            box-shadow: none; /* Remove the line (shadow) underneath the navigation bar */
+        }
+
+        nav.navigation {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav.navigation a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav.navigation {
+                display: none;
+                flex-direction: column;
+                background-color: #f8f8f8;
+                position: absolute;
+                top: 60px;
+                left: 0; /* Align navigation dropdown to the left */
+                width: 100%;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            nav.navigation.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                top: 10px;
+                left: 20px; /* Align hamburger to the left */
+            }
+
+            .logo {
+                text-align: center;
+                flex-grow: 1;
+                position: relative;
+            }
+
+            header {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        /* Page title styling */
+        .page-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 30px;
+            color: #333;
+        }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navigation = document.querySelector('nav.navigation');
+
+            menuToggle.addEventListener('click', () => {
+                navigation.classList.toggle('show');
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
+        <span class="menu-toggle">☰</span>
         <a href="home.html" class="logo-link"><h2 class="logo">Vedøy Ventures</h2></a>
         <nav class="navigation">
             <a href="home.html">Hjem</a>
-            <a href="about.html" >Om oss</a>
+            <a href="about.html">Om oss</a>
             <a href="tjenester.html" class="active">Tjenester</a>
-            <a href="prosjekter.html" >Portofolio</a>
+            <a href="prosjekter.html">Portfolio</a>
         </nav>
     </header>
-
+    <!-- Container for skill cards -->
     <div class="skills-container">
+        <!-- Skill card for responsive design -->
         <div class="skill-card">
             <div class="skill-header">Responsivt</div>
-            <div class="skill-icon">&#128241;</div>
-            <div class="skill-description">Vi lager responsive og moderne apper for Android og iOS, som sikrer sømløse brukeropplevelser.
-            </div>
-            <div class="skill-footer">Dine ideer, vakkert utført.
-            </div>
+            <div class="skill-icon">&#128241;</div> <!-- Smartphone icon -->
+            <div class="skill-description">Vi lager responsive og moderne apper for Android og iOS, som sikrer sømløse brukeropplevelser.</div>
+            <div class="skill-footer">Dine ideer, vakkert utført.</div>
         </div>
 
+        <!-- Skill card for chatbots and AI -->
         <div class="skill-card">
             <div class="skill-header">Chatboter & KI</div>
-            <div class="skill-icon">&#129302;</div>
+            <div class="skill-icon">&#129302;</div> <!-- Robot face icon -->
             <div class="skill-description">Vi integrerer intelligente chatboter og KI i dine apper og nettsider.</div>
-            <div class="skill-footer">Forbedre kundekommunikasjonen.
-            </div>
+            <div class="skill-footer">Forbedre kundekommunikasjonen.</div>
         </div>
 
+        <!-- Skill card for scalability -->
         <div class="skill-card">
-            <div class="skill-header">Skalerbart
-            </div>
-            <div class="skill-icon">&#128187;</div>
+            <div class="skill-header">Skalerbart</div>
+            <div class="skill-icon">&#128187;</div> <!-- Computer icon -->
             <div class="skill-description">Vi hjelper små apper med å vokse til robuste, skalerbare applikasjoner tilpasset dine forretningsbehov.</div>
             <div class="skill-footer">Vi vokser med dine ambisjoner.</div>
         </div>
 
+        <!-- Skill card for maintenance -->
         <div class="skill-card">
             <div class="skill-header">Vedlikehold</div>
-            <div class="skill-icon">&#128295;</div>
+            <div class="skill-icon">&#128295;</div> <!-- Wrench icon -->
             <div class="skill-description">Langsiktig støtte og vedlikehold som sikrer at koden din forblir pålitelig og oppdatert.</div>
             <div class="skill-footer">Lojalitet og pålitelighet garantert.</div>
         </div>
