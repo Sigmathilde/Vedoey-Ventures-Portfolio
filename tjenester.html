@@ -11,152 +11,167 @@
 
         /* Container for all skill cards */
         .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 175px 10px;
+            display: flex; /* Arrange cards in a row */
+            flex-wrap: wrap; /* Allow wrapping to the next row */
+            justify-content: center; /* Center cards horizontally */
+            align-items: center; /* Align cards to the center vertically */
             gap: 40px; /* Space between cards */
+            min-height: calc(100vh - 50px); /* Ensure the container takes up the remaining vertical space minus header/footer */
         }
 
         /* Individual skill card styling */
         .skill-card {
-            border-color: #359381;
-            border-radius: 15px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            width: 300px;
-            height: 450px; /* Increase height for more space */
-            display: flex;
+            border-color: #359381; /* Card border color */
+            border-radius: 15px; /* Rounded card edges */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            overflow: hidden; /* Hide content overflowing the card */
+            width: 300px; /* Set fixed width */
+            height: 450px; /* Set fixed height */
+            display: flex; /* Use flexbox for layout */
             flex-direction: column; /* Stack content vertically */
-            justify-content: space-between; /* Distribute space evenly */
+            justify-content: space-between; /* Space items evenly */
             align-items: center; /* Center items horizontally */
-            transform: perspective(1000px) rotateY(0); /* 3D effect for hover */
-            transition: transform 0.6s, box-shadow 0.3s; /* Smooth animation */
-            cursor: pointer; /* Pointer cursor for interactivity */
-            text-align: center; /* Center text inside cards */
+            transform: perspective(1000px) rotateY(0); /* Add a 3D effect */
+            transition: transform 0.6s, box-shadow 0.3s; /* Smooth hover animation */
+            cursor: pointer; /* Change cursor to pointer */
+            text-align: center; /* Center-align text */
         }
 
         /* Hover effect for skill cards */
         .skill-card:hover {
-            transform: perspective(1000px) rotateY(10deg); /* Rotate slightly on hover */
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+            transform: perspective(1000px) rotateY(10deg); /* Slight 3D rotation */
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
         }
 
         /* Header section of each card */
         .skill-header {
-            background-color: #359381; /* Primary theme color */
-            color: white; /* Text color */
-            font-size: 22px;
-            text-align: center;
-            padding: 15px;
-            width: 100%; /* Ensure consistent width */
+            background-color: #359381; /* Card header background color */
+            color: white; /* Header text color */
+            font-size: 22px; /* Font size for header text */
+            text-align: center; /* Center-align header text */
+            padding: 15px; /* Add padding inside the header */
+            width: 100%; /* Full width for header */
         }
 
         /* Icon styling inside cards */
         .skill-icon {
-            font-size: 80px; /* Large size for emphasis */
-            color: #359381; /* Match theme color */
-            text-align: center;
-            margin: 20px 0; /* Space around icon */
+            font-size: 80px; /* Set icon size */
+            color: #359381; /* Icon color */
+            text-align: center; /* Center-align the icon */
+            margin: 20px 0; /* Add space above and below the icon */
         }
 
         /* Description text inside cards */
         .skill-description {
-            padding: 20px;
-            font-size: 16px;
-            line-height: 1.6; /* Improved readability */
-            color: #333; /* Enhanced contrast for better accessibility */
-            flex-grow: 1; /* Ensure the description stretches to use available space */
-            overflow-y: auto; /* Allow scrolling if text still exceeds available height */
+            padding: 20px; /* Add padding around the text */
+            font-size: 16px; /* Set font size */
+            line-height: 1.6; /* Improve readability */
+            color: #333; /* Text color for contrast */
+            flex-grow: 1; /* Stretch to fill available space */
+            overflow-y: auto; /* Enable scrolling if text overflows */
         }
 
         /* Footer section of each card */
         .skill-footer {
-            background: #359381; /* Match header background */
-            padding: 20px;
-            font-size: 14px;
-            color: #ffffff; /* White text for contrast */
-            width: 100%; /* Ensure consistent width */
+            background: #359381; /* Footer background color */
+            padding: 20px; /* Add padding to the footer */
+            font-size: 14px; /* Font size for footer text */
+            color: #ffffff; /* Footer text color */
+            width: 100%; /* Full width for footer */
         }
 
         /* Responsive navigation menu styling */
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            box-shadow: none; /* Remove the line (shadow) underneath the navigation bar */
+            display: flex; /* Arrange items in a row */
+            justify-content: space-between; /* Space items apart */
+            align-items: center; /* Align items vertically */
+            padding: 10px; /* Add padding around the header */
+            box-shadow: none; /* Remove navigation bar shadow */
         }
 
         nav.navigation {
-            display: flex;
-            gap: 15px;
+            display: flex; /* Arrange links in a row */
+            gap: 15px; /* Space between links */
         }
 
         nav.navigation a {
-            text-decoration: none;
-            color: #333;
-            font-size: 16px;
+            text-decoration: none; /* Remove underline */
+            color: #333; /* Set link color */
+            font-size: 16px; /* Font size for links */
         }
 
         .menu-toggle {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
+            display: none; /* Hide toggle button by default */
+            font-size: 24px; /* Size for toggle icon */
+            cursor: pointer; /* Pointer cursor for toggle */
         }
 
         @media (max-width: 768px) {
             nav.navigation {
-                display: none;
-                flex-direction: column;
-                background-color: #f8f8f8;
-                position: absolute;
-                top: 60px;
-                left: 0; /* Align navigation dropdown to the left */
-                width: 100%;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                display: none; /* Hide navigation links */
+                flex-direction: column; /* Stack links vertically */
+                background-color: #ffffff; /* Set background color */
+                position: absolute; /* Position dropdown menu */
+                top: 60px; /* Align below header */
+                left: 0; /* Align to the left */
+                width: 100%; /* Full width dropdown */
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Shadow for dropdown */
             }
 
             nav.navigation.show {
-                display: flex;
+                display: flex; /* Show navigation links */
+                padding-bottom: 10px; /* Add space below links */
             }
 
             .menu-toggle {
-                display: block;
-                position: absolute;
-                top: 10px;
-                left: 20px; /* Align hamburger to the left */
+                display: block; /* Show toggle button */
+                position: absolute; /* Position toggle */
+                top: 10px; /* Align to top */
+                left: 20px; /* Align to left */
             }
 
             .logo {
-                text-align: center;
-                flex-grow: 1;
-                position: relative;
+                text-align: center; /* Center-align logo */
+                flex-grow: 1; /* Stretch logo */
+                position: relative; /* Position relative to container */
             }
 
             header {
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
+                flex-direction: row; /* Arrange header items */
+                justify-content: center; /* Center header items */
+                align-items: center; /* Align items vertically */
             }
+
+            
         }
 
         /* Page title styling */
         .page-title {
-            text-align: center;
-            font-size: 28px;
-            font-weight: bold;
-            margin-top: 30px;
-            color: #333;
+            text-align: center; /* Center-align title */
+            font-size: 28px; /* Title font size */
+            font-weight: bold; /* Bold title text */
+            margin-top: 30px; /* Space above title */
+            color: #333; /* Title text color */
         }
+
+        /* Footer styling */
+        footer {
+            text-align: center; /* Center-align footer text */
+            margin-top: 40px; /* Space above footer */
+            color: #aaa; /* Footer text color */
+        }
+
     </style>
     <script>
+        // Wait for the DOM to load
         document.addEventListener('DOMContentLoaded', () => {
+            // Select the menu toggle button and navigation menu
             const menuToggle = document.querySelector('.menu-toggle');
             const navigation = document.querySelector('nav.navigation');
 
+            // Add a click event listener to the toggle button
             menuToggle.addEventListener('click', () => {
+                // Toggle the 'show' class to display or hide the menu
                 navigation.classList.toggle('show');
             });
         });
@@ -164,8 +179,8 @@
 </head>
 <body>
     <header>
-        <span class="menu-toggle">☰</span>
-        <a href="home.html" class="logo-link"><h2 class="logo">Vedøy Ventures</h2></a>
+        <span class="menu-toggle">☰</span> <!-- Toggle button for responsive menu -->
+        <a href="home.html" class="logo-link"><h2 class="logo">Vedøy Ventures</h2></a> <!-- Company logo link -->
         <nav class="navigation">
             <a href="home.html">Hjem</a>
             <a href="about.html">Om oss</a>
@@ -207,6 +222,10 @@
             <div class="skill-footer">Lojalitet og pålitelighet garantert.</div>
         </div>
     </div>
+
+    <footer>
+        <p>&copy; 2025 Vedøy Ventures. All rights reserved.</p> <!-- Footer copyright text -->
+    </footer>
 
 </body>
 </html>
