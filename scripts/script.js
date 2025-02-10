@@ -1,37 +1,45 @@
-document.addEventListener("DOMContentLoaded", function() {
-    fetch("header.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("header-container").innerHTML = data;
+document.addEventListener("DOMContentLoaded", function () {
+    const headerContainer = document.getElementById("header-container");
 
-            // Wait for header elements to be added to the page
-            const menuToggle = document.querySelector(".menu-toggle");
-            const navigation = document.querySelector(".navigation");
+    if (headerContainer) {
+        fetch("header.html")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load header.html");
+                }
+                return response.text();
+            })
+            .then(data => {
+                headerContainer.innerHTML = data;
+                initializeNavbar(); // Call function to make menu work
+            })
+            .catch(error => console.error("Error loading navbar:", error));
+    }
 
-            if (menuToggle && navigation) {
-                menuToggle.addEventListener("click", function(event) {
-                    event.stopPropagation(); // Prevents click from triggering document event
-                    navigation.classList.toggle("show");
-                });
+    function initializeNavbar() {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navigation = document.querySelector(".navigation");
 
-                // Close menu when clicking outside of it
-                document.addEventListener("click", function(event) {
-                    if (!menuToggle.contains(event.target) && !navigation.contains(event.target)) {
-                        navigation.classList.remove("show");
-                    }
-                });
-            } else {
-                console.warn("Menu toggle or navigation not found.");
-            }
+        if (menuToggle && navigation) {
+            menuToggle.addEventListener("click", function () {
+                navigation.classList.toggle("show");
+            });
 
-            // Highlight active page
-            const currentPage = window.location.pathname.split("/").pop().replace(".html", "");
-            const navLinks = document.querySelectorAll(".navigation a");
-            navLinks.forEach(link => {
-                if (link.getAttribute("href").replace(".html", "") === currentPage) {
-                    link.classList.add("active");
+            document.addEventListener("click", function (event) {
+                if (!menuToggle.contains(event.target) && !navigation.contains(event.target)) {
+                    navigation.classList.remove("show");
                 }
             });
-        })
-        .catch(error => console.error("Error loading navbar:", error));
+        }
+
+        // Highlight active page
+        const currentPage = window.location.pathname.split("/").pop().replace(".html", "");
+        const navLinks = document.querySelectorAll(".navigation a");
+
+        navLinks.forEach(link => {
+            if (link.getAttribute("href").replace(".html", "") === currentPage) {
+                link.classList.add("active");
+            }
+        });
+    }
 });
