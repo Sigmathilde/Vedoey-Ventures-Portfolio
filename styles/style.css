@@ -103,7 +103,8 @@ header {
                 cursor: pointer;
             }
             .logo {
-               font-size: 0.2em;
+
+               font-size: 1.4em;
                text-align: center;
                flex-grow: 1;
             }
@@ -606,18 +607,3 @@ header {
   }
   
   /* Remove default link styles */
-.logo-link {
-    text-decoration: none; /* Removes underline */
-    color: inherit; /* Inherits the text color from parent */
-    display: inline-block; /* Ensures proper alignment */
-}
-
-/* Optional: Logo-specific styling */
-.logo {
-    font-size: 2em;
-    color: #359381;
-    font-weight: bold;
-    margin: 0; /* Removes default margin from <h2> */
-    pointer-events: none;
-    text-decoration: none;
-}
