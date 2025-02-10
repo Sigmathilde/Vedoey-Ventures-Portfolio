@@ -9,18 +9,6 @@
 </head>
 <body>
 
-  <header>
-    <!-- Logo linking to the homepage -->
-    <a href="home.html" class="logo-link"><h2 class="logo">Vedøy Ventures</h2></a>
-    <!-- Navigation menu for website sections -->
-    <nav class="navigation">
-        <a href="home.html">Hjem</a>
-        <a href="about.html">Om oss</a>
-        <a href="tjenester.html">Tjenester</a>
-        <a href="prosjekter.html" class="active">Portfolio</a>
-    </nav>
-  </header>
-
   <style>
     /* Reset styles for consistent layout across browsers */
     * {
@@ -36,22 +24,6 @@
       color: #003329;
       line-height: 1.6;
       padding: 20px;
-    }
-
-    /* Styling for the header section */
-    header {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    header h1 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #666;
     }
 
     /* Portfolio section layout */
@@ -159,6 +131,9 @@
     }
   </style>
 
+  <div id="header-container"></div>
+
+
   <main>
     <div class="portfolio-section">
       <h2>A Glimpse Into Our Work</h2>
@@ -211,6 +186,8 @@
   </footer>
 
   <!-- External JavaScript file for added functionality -->
-  <script src="script.js"></script>
+  <script src="header.js"></script>
+
+  <script> src="header.js"</script>
 </body>
 </html>

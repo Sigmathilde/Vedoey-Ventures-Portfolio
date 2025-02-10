@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
+
 * {
     margin: 0;
     padding:
@@ -14,33 +15,107 @@ body {
     
 }
 
+
+ /* Responsive navigation menu styling */
 header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 30px 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
-}
+    padding: 15px 20px;
+    width: 100%;
+    background: transparent; /* No background */
+    box-shadow: none; /* No shadow */
+    position: absolute; /* No fixed navbar */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    }
 
-.logo {
-    font-size: 2em;
-    color: #359381;
-    pointer-events: none;
-    text-decoration: none;
-}
+    nav.navigation {
+        display: flex !important; /* Ensure it's always visible */
+        gap: 15px;
+    }
 
-.navigation a {
-    text-decoration: none;
-    color: #359381;
-    padding: 6px 15px;
-    border-radius: 20px;
-    margin: 0 10px;
-    font-weight: 600;
-}
+        nav.navigation a {
+            text-decoration: none; /* Remove underline */
+            color: #359381; /* Set link color */
+            font-size: 16px; /* Font size for links */
+            transition: background-color 0.3s ease;
+        }
+
+        nav.navigation.show {
+            display: flex;
+        }
+        .menu-toggle {
+            display: none;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #359381;
+            margin-left: 10px; /* Adds spacing from the left */
+        }
+
+        .logo-link {
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            nav.navigation {
+                display: none;
+                flex-direction: column;
+                background: white;
+                position: absolute;
+                top: 70px; /* Ensures it appears directly below the logo */
+                left: 0;
+                width: 100%;
+                padding: 0; /* Remove padding */
+                margin: 0; /* Remove any spacing */
+                border-radius: 10px;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+                transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0; /* Makes sure it's fully hidden */
+                visibility: hidden; /* Ensures it disappears */
+                background-color: transparent !important; /* Remove any background */
+
+            }
+        
+            nav.navigation.show {
+                display: flex;
+                max-height: 300px; /* Expands when opened */
+                padding: 10px 0; /* Add padding only when open */
+                opacity: 1; /* Make visible */
+                visibility: visible; /* Ensure it appears */
+                background-color: white !important; /* Ensure it has a background only when open */
+
+            }
+            
+            .menu-toggle {
+                display: block; /* Show hamburger menu */
+                font-size: 28px;
+                position: absolute;
+                left: 20px;
+                top: 20px;
+                z-index: 1001;
+                cursor: pointer;
+            }
+            .logo {
+               font-size: 1.5em;
+               text-align: center;
+               flex-grow: 1;
+            }
+
+            header {
+                flex-direction: row; /* Arrange header items */
+                justify-content: center; /* Center header items */
+                align-items: center; /* Align items vertically */
+            }
+
+            
+        }
 
 .navigation a:hover,
 .navigation a.active {
@@ -48,6 +123,7 @@ header {
     color: white;
 
 }
+
 
 .parallax {
     position: relative;
@@ -61,7 +137,7 @@ header {
 
 #text {
     position: absolute;
-    font-size: 5em;
+    font-size: 2.2em;
     color: #333;
     padding-bottom: 69px;
 }
