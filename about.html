@@ -6,142 +6,149 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="icon" href="assets/images/Beep.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@300&family=Lato:wght@400&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
-
-        /* Base styling for the body */
         body {
-            background-color: #F7FAF9; /* Sets a light background color */
-            margin: 0; /* Removes default margin */
-            padding: 0; /* Removes default padding */
-            box-sizing: border-box; /* Ensures padding and borders are included in size calculations */
-            font-family: Arial, sans-serif; /* Default font family */
+            background-color: #F7FAF9;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
 
-        /* Styling for the team section container */
         .team-section {
             display: flex;
-            gap: 40px; /* Space between cards */
-            padding-top: 150px; /* Space from the top */
-            justify-content: center; /* Aligns cards in the center horizontally */
-            flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+            align-items: center;
+            gap: 40px;
+            padding-top: 50px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
-        /* Individual team member card */
         .card {
-            background-color: #EAF6F6; /* Light green background for the cards */
-            border: 1px solid #A7D7C5; /* Subtle border color */
-            border-radius: 10px; /* Rounded corners */
-            padding: 20px; /* Inner spacing */
-            width: 20%; /* Percentage-based width for better responsiveness */
-            max-width: clamp(250px, 20%, 300px); /* Uses clamp for adaptive card sizing */
-            height: 550px; /* Fixed card height */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-            text-align: center; /* Centers text */
-            margin-bottom: 30px; /* Space between rows when wrapping */
+            background-color: #EAF6F6;
+            border: 1px solid #A7D7C5;
+            border-radius: 10px;
+            padding: 20px;
+            width: clamp(250px, 20%, 300px);
+            height: 550px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 30px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Ensures even spacing between elements */
+            justify-content: space-between;
         }
 
-        /* Styling for team member image */
         .image {
-            width: 100px; /* Fixed width of image */
-            height: 100px; /* Fixed height of image */
-            border-radius: 50%; /* Makes the image circular */
-            margin: 0 auto 15px; /* Centers the image and adds space below */
-            object-fit: cover; /* Ensures the image scales properly */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds slight shadow */
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            object-fit: cover;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Styling for the team member name */
         .name {
-            font-family: 'Montserrat', sans-serif; /* Bold, modern font */
-            font-weight: 600; /* Bold weight for emphasis */
-            font-size: 1.5em; /* Adjusted font size */
-            color: #306754; /* Dark green for readability */
-            margin-bottom: 10px; /* Space below the name */
-            white-space: nowrap; /* Prevents text wrapping */
-            overflow: hidden; /* Hides overflow text */
-            text-overflow: ellipsis; /* Adds ellipsis for truncated text */
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.5em;
+            color: #306754;
+            margin-bottom: 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        /* Styling for skill tags */
         .skills {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            row-gap: 8px; /* Vertical space between tags */
-            column-gap: 8px; /* Horizontal space between tags */
-            margin-bottom: 10px; /* Space below tags */
+            gap: 8px;
+            margin-bottom: 10px;
         }
 
         .skill-tag {
-            background-color: #D1F0E3; /* Light green background */
-            color: #306754; /* Dark green text */
-            padding: 5px 10px; /* Inner spacing */
-            border-radius: 5px; /* Rounded edges */
-            font-size: 0.85em; /* Slightly smaller text */
-            font-weight: 500; /* Medium weight */
-            font-family: 'Poppins', sans-serif; /* Matches overall design */
+            background-color: #D1F0E3;
+            color: #306754;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.85em;
+            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
         }
 
-        /* Styling for team member role */
         .role {
-            font-family: 'Poppins', sans-serif; /* Clean and modern font */
-            font-weight: 500; /* Semi-bold for emphasis */
-            font-size: 1.2em; /* Slightly smaller than name */
-            color: #355E5C; /* Complementary dark green color */
-            margin-bottom: 15px; /* Space below the role */
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 1.2em;
+            color: #355E5C;
+            margin-bottom: 15px;
         }
 
-        /* Styling for team member description */
         .description {
-            font-family: 'Lato', sans-serif; /* Readable font */
-            font-weight: 400; /* Normal text weight */
-            font-size: 1em; /* Standard size for paragraphs */
-            color: #4F716C; /* Muted green for readability */
-            line-height: 1.6; /* Improved spacing for readability */
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            font-size: 1em;
+            color: #4F716C;
+            line-height: 1.6;
         }
 
-        /* Styling for contact button */
         .contact-btn {
-            background-color: #359381; /* Green button background */
-            color: white; /* White text for contrast */
-            font-family: 'Poppins', sans-serif; /* Matches the rest of the design */
-            font-weight: 500; /* Slightly bold for visibility */
-            padding: 10px 20px; /* Padding for comfortable click area */
-            border: none; /* Removes default border */
-            border-radius: 5px; /* Rounded edges */
-            cursor: pointer; /* Pointer cursor on hover */
-            margin-top: 15px; /* Space above the button */
+            background-color: #359381;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
             display: flex;
-            align-items: center; /* Centers icon and text */
-            justify-content: center; /* Centers button content */
-            transition: background-color 0.3s ease, transform 0.3s ease; /* Adds smooth transitions for hover state */
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .contact-btn:hover {
-            background-color: #2B5E4C; /* Darker green on hover */
-            transform: scale(1.05); /* Slightly enlarges button on hover */
+            background-color: #2B5E4C;
+            transform: scale(1.05);
         }
 
         .contact-btn i {
-            margin-right: 8px; /* Space between icon and text */
+            margin-right: 8px;
         }
 
-    </style>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+        @media (max-width: 768px) {
+            .team-section {
+                flex-direction: column;
+            }
 
+            .card {
+                width: 80%;
+                height: auto;
+            }
+
+            h1 {
+                font-size: 1.5em;
+                padding-top: 140px;
+            }
+
+
+            }
+
+        h1 {
+            font-size: 2em;
+            text-align: center;
+            color: #306754;
+            padding-top: 120px;
+            padding-bottom: 2%;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header Section -->
-
     <div id="header-container"></div>
-
-     
-    <!-- Team Section -->
+    <h1> Våre ansatte:</h1>
     <div class="team-section">
-        <!-- Team Member Card -->
         <div class="card">
             <img src="assets/images/Selfie.jpg" alt="Mathilde K. Vedøy" class="image">
             <div class="name">Mathilde K. Vedøy</div>
@@ -151,10 +158,9 @@
                 <span class="skill-tag">#CSS</span>
             </div>
             <div class="role">CEO</div>
-            <div class="description">Mathilde er leder for Vedøy Ventures og jobber for å drive selskapet fremover med fokus på innovasjon og teknologiutvikling.</div>
-            <button class="contact-btn"><i class="fas fa-paper-plane"></i>Send Message</button>
+            <div class="description">Mathilde er leder for Vedøy Ventures og jobber for innovasjon og teknologiutvikling.</div>
+            <button class="contact-btn"><i class="fas fa-paper-plane"></i>Send melding</button>
         </div>
-        <!-- Team Member Card -->
         <div class="card">
             <img src="assets/images/theodor.jpg" alt="Theodor K. Vedøy" class="image">
             <div class="name">Theodor K. Vedøy</div>
@@ -164,25 +170,11 @@
                 <span class="skill-tag">#Node.js</span>
             </div>
             <div class="role">CTO</div>
-            <div class="description">Theodor har ansvaret for den tekniske retningen i Vedøy Ventures, og bruker sin kompetanse innen AI og systemarkitektur for å levere avanserte løsninger.</div>
-            <button class="contact-btn"><i class="fas fa-paper-plane"></i>Send Message</button>
-        </div>
-        <!-- Team Member Card -->
-        <div class="card">
-            <img src="assets/images/chatgpt.jpg" alt="Chat-GPT" class="image">
-            <div class="name">Chat-GPT</div>
-            <div class="skills">
-                <span class="skill-tag">#AI</span>
-                <span class="skill-tag">#MachineLearning</span>
-                <span class="skill-tag">#Python</span>
-            </div>
-            <div class="role">Fullstack-utvikler</div>
-            <div class="description">Chat-GPT er en allsidig fullstack-utvikler som jobber effektivt og presist for å realisere prosjekter.</div>
-            <button class="contact-btn"><i class="fas fa-paper-plane"></i>Send Message</button>
+            <div class="description">Theodor styrer den tekniske retningen i Vedøy Ventures og utvikler avanserte løsninger.</div>
+            <button class="contact-btn"><i class="fas fa-paper-plane"></i>Send melding</button>
         </div>
     </div>
+    <div id="footer-container"></div>
     <script src="scripts/script.js"></script>
-
-
 </body>
 </html>
