@@ -62,7 +62,7 @@ header {
             text-decoration: none;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1500px) {
             nav.navigation {
                 display: none;
                 flex-direction: column;
@@ -83,13 +83,12 @@ header {
                 background-color: transparent !important; /* Remove any background */
 
             }
-
             #text {
+                position: static; /* Remove absolute positioning */
                 text-align: center;
-                font-size: 1em;
-                width: 100%; /* Full width */
-                color: #333;
-            }
+                margin: 0 auto; /* Center the block */
+                padding: 20px 0; /* Optional spacing */
+              }
 
             nav.navigation.show {
                 display: flex;
@@ -134,10 +133,122 @@ header {
                 display: none;
             }
 
-            .header {
+            .text-content {
+                display: none;
+                width: 100%;
+                padding: 20px;
+                text-align: center;
+            }
 
+            .text-and-image {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .animated-title {
+                display: block;
+                width: 100%;
+                margin: 0 auto;
+                padding-left: 0;
+                font-size: 2em;
+                text-align: center;
+            }
+
+            .sec {
+                padding: 20px;
+                text-align: center;
+            }
+
+            .sec h2 {
+                font-size: 2em;
+                text-align: center;
+                width: 100%;
+                margin: 0 auto;
+                display: block;
             }
             
+            .text-display {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .card-row {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .card {
+                width: 90%;
+                max-width: 400px;
+                margin-bottom: 20px;
+            }
+
+            .background-element {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80%;
+                max-width: 400px;
+            }
+
+
+            .fancy-section {
+                background: linear-gradient(to right, #e4c30d, #4ba352);
+                padding: 20px;
+                text-align: center;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                font-family: 'Arial', sans-serif;
+                width: 100% !important;
+                max-width: 100vw !important; /* Ensures it never overflows */
+                display: block !important; /* Show the section */
+                flex-direction: column;
+                align-items: center; /* Center elements */
+                justify-content: center; /* Center elements */
+            }
+
+            .animated-title {
+                font-size: 1.8em; /* Reduce size for better fit */
+                text-align: center;
+                width: 100%; /* Prevent breaking */
+                max-width: 100%; /* Prevent breaking */
+                margin: 0 auto; /* Center title */
+                line-height: 1.3; /* Reduce spacing between words */
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                width: 100%;
+                display: flex;
+            }
+
+            .feature-card {
+                max-width: 85%;
+                width: 85%;
+                padding: 15px;
+                margin-bottom: 15px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .background-bar {
+                display: none !important; /* Hide the weird background bar */
+            }
+
+            .sec {
+                padding: 20px !important; /* Reduce excessive padding */
+                text-align: center !important;
+                width: 100% !important;
+                max-width: 100vw !important;
+                display: block !important;
+            }
         }
 
 .navigation a:hover,
@@ -268,6 +379,7 @@ header {
 
 
   footer {
+    background-color: #003329;
     text-align: center;
     margin-top: 40px;
   }
@@ -452,7 +564,7 @@ header {
 
 .fancy-section {
     background: linear-gradient(to right, #359381, #4ba352);
-    padding: 30px 50px;
+    padding: 3em;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;
