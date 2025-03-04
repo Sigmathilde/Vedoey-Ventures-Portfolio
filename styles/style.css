@@ -18,18 +18,18 @@ html, body {
 
  /* Responsive navigation menu styling */
 header {
+    position: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
-    width: 100%;
-    background: transparent; /* No background */
-    box-shadow: none; /* No shadow */
-    position: absolute; /* No fixed navbar */
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    }
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
 
     nav.navigation {
         display: flex !important; /* Ensure it's always visible */
@@ -62,7 +62,7 @@ header {
             text-decoration: none;
         }
 
-        @media (max-width: 1500px) {
+        @media (max-width: 768px) {
             nav.navigation {
                 display: none;
                 flex-direction: column;
@@ -103,28 +103,43 @@ header {
             }
             
             .menu-toggle {
-                display: block; /* Show hamburger menu */
+                display: block;
                 font-size: 32px;
                 position: absolute;
                 left: 20px;
-                top: 20px;
-                z-index: 1001;
+                top: 50%;
+                transform: translateY(-50%);
                 cursor: pointer;
             }
 
             .logo {
-                left: 20px;
-                font-size: 1.6em;
-                margin: 0;
-                white-space: nowrap; /* Prevent wrapping */
-                padding: 0;
+                align-items: center;
+                display: inline-flex;
+                white-space: nowrap;
+                justify-content: center;
+                padding-left: 17%; /* Add padding to the left */
+                font-size: 1.8rem;
+                font-weight: bold;
+                color: #359381;
+                max-width: fit-content;
+                white-space: nowrap;
+                margin: 0 auto;
+                margin-left: 10px; /* Adds spacing from the left */
             }
 
+            /* Base Header Styling */
             header {
-                flex-direction: row; /* Arrange header items */
-                justify-content: space-between; /* Center header items */
-                align-items: center; /* Align items vertically */
-                padding: 15px 10px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px 50px;
+                background: white;
+                position: fixed;
+                top: 0;
+                left: 0;
+                box-shadow: none !important; /* Remove shadow */
+                width: 100%;
+                z-index: 100;
             }
 
             .parallax img {
@@ -453,18 +468,6 @@ body {
     overflow-x: hidden;
 }
 
-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 30px 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-}
-
 .navigation a {
     text-decoration: none;
     color: #359381;
@@ -625,7 +628,8 @@ header {
     padding: 20px;
     text-align: center;
     flex: 1;
-    max-width: 300px;
+    max-width: 500px;
+    height:500px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
